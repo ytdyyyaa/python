@@ -137,9 +137,48 @@ class Teacher(Person):
 ```
 
 ## Container base
+We use the list dict and the tupe to make some complex structure in python we call this in java Container
+and in python we say this is the base complex object </br>
+and use this fllow three enough </br>
+if use more conntainer we can  **import collection** </br>
+
 * list
+define a empty list is so easy just
+```python
+  list_name = []
+```
+find a element by index then use this way :
+```python
+list_name = []
+list_name[index]
+```
+and this object have more native function :
+```python
+  list_name = []
+  #append a element
+  list_name.append(elemaent)
+  #count a element
+  list_name.count(element)
+  #get the index of a element
+  list_name.index(element)
+  #remove a elemennt
+  list_name.remove(element)
+  #sort the elements
+  list_name.sort(lambda x,y : x > y ? : True : False)
+```
 * tuple
+The tuple like the list and the difference between their is that tuple is more like a set
+In this container the elements is unique in this containe </br>
+like this operatation:
+```python
+  tuple_name = ()
+  #return the max in tuple
+  max(tuple_name)
+  # use the set() to be a tuple
+  set(list)
+```
 * dict
+When we use JSON we see the dict is like this structure
 
 ## Django base
 
