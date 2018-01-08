@@ -297,11 +297,36 @@ urlpatterns = [
 ```
 you have mapped the base view on your url localhost:8000 /polls/ </br>
 
-* 
+*
 
 
 ## Question
 
 * Program problem
+    * How can you sort the Array  ?
+        use the list.sort() function then will let a judge function in the sort inner
+    * Get the definne key value in directory  
+        ```python
+          dict["key"]
+        ```
+    * Modify the dict ?
+          ```python
+            dict["key"] = "New Value"
+          ```
+    * Try to define a function to solve some algorithm problem
+        * Bobble Sort ?
+          ```python
+            for i in range(0,n):
+              for j in range(i,n):
+                if list[i] < list[j]:
+                    swap()    
+          ```
+        * Find the second Max elemennt
+          ```python
+            
+          ```
+        * Find the element that search in the search
+
+        *
 
 * Django problem
