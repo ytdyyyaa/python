@@ -219,6 +219,89 @@ My first personal blog is use this framework to contribute and is so easy for us
 
 * What is the Router ?
   we use the Router for us to let the user find the correct way for some business
-  and then we use the url to do the same thing as the
+  and then we use the url to do the same thing as the TCP/IP
+  The common process is that when a request is comming then will let the Django to find the right url to handle this url</br>
+  and then will use the bind handler to handle it and will let the handler to return the result to the endpoint user side
+
+* How to start a Django ?
+It is easy to solve this
+    * Firstly you must install the Django on your conputer
+    * Then use the pip to install the Django
+    * How to do before two points ?
+      like Ubuntu we should do this
+        ```shell
+          sudo apt-get install python
+          sudo apt-get install pip
+          pip install Django
+          ```
+And then choose the folder what is you favorite and then input this command that
+**django-admin startproject your_project_name**
+and then change directory to the project folder
+and then use this shell Command **python manage.py runserver** then your django is install successful
+</br>
+Django use the App to divide the business logic so we have to create our own app to create our business logic
+use the command **python manage.py startapp app_name**
+and in your project directory will have a app directory and you can create your own logic of your app
+
+* File Structure
+  Base simple project structure
+  ```
+  mysite/
+    manage.py
+    mysite/
+        __init__.py
+        settings.py
+        urls.py
+        wsgi.py
+  ```
+  and containe one app or more apps
+  ```
+mysite/
+  polls/
+    __init__.py
+    admin.py
+    apps.py
+    migrations/
+        __init__.py
+    models.py
+    tests.py
+    views.py
+  ```
+
+* Create View one step
+edit the **pools/views.py** and then write this
+```python
+from django.http import HttpResponse
+def index(request):
+    return HttpResponse("Hello, world. You're at the polls index.")
+```
+Now you have create a simple view
+
+* Modify the Url to map the view you have wrote
+edit the **polls/urls.py**
+```python
+from django.conf.urls import url
+from . import views
+urlpatterns = [
+    url(r'^$', views.index, name='index'),
+]
+```
+and edit the **mysite/urls.py**
+```python
+from django.conf.urls import include, url
+from django.contrib import admin
+urlpatterns = [
+    url(r'^polls/', include('polls.urls')),
+    url(r'^admin/', admin.site.urls),
+]
+```
+you have mapped the base view on your url localhost:8000 /polls/ </br>
+
+* 
+
 
 ## Question
+
+* Program problem
+
+* Django problem
