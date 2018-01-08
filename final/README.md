@@ -178,8 +178,47 @@ like this operatation:
   set(list)
 ```
 * dict
-When we use JSON we see the dict is like this structure
+When we use JSON we see the dict is like this structure</br>
+simple define a dict :
+```python
+  dict_name = {}
+```
+Delete the dict
+```python
+  dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'};
+  del dict['Name'];
+  dict.clear();     
+  del dict ;        
+  print "dict['Age']: ", dict['Age'];
+  print "dict['School']: ", dict['School'];
+```
+Modify the dict
+```python
+dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'};
+dict['Age'] = 8;
+dict['School'] = "DPS School";
+print "dict['Age']: ", dict['Age'];
+print "dict['School']: ", dict['School'];
+```
 
 ## Django base
+Django is a framework for python web and we can use this to be a cms framework
+and this framework is carry the admin system by itself </br>
+My first personal blog is use this framework to contribute and is so easy for us to use
+
+* What is the MTV pattern ?
+  we call the **model** to be the data interface and surface </br>
+  we call the **Template** to be the page display way </br>
+  we call the **View** to be the router for user to find the correct Template and the model </br>
+  </br>
+  We can see the web service to a transcation contain a Request and a Response in some ways or such as that </br>
+  Nginx and Apache will wrapper these to be two object and then will send them to the web container and we can find more information about the link from
+  the two objects </br>
+  and the Session is contain from many WebSession that containe just request and response so we must have a value to control the status of the user
+  MTV is a way to let our code to be separated and we can maintain these easilier
+
+* What is the Router ?
+  we use the Router for us to let the user find the correct way for some business
+  and then we use the url to do the same thing as the
 
 ## Question
