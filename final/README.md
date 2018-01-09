@@ -28,7 +28,7 @@ variable_float = 1.1
 variable_char = 'A'
 ```
 And use the base operator : </br>
-**+ - * / % & ^ | and not**
+**+ - * / % & ^ | and not or**
 you must be fammilar to this in C programming </br>
 
 and the base structure operate : </br>
@@ -410,4 +410,3 @@ admin.site.register(Author, AuthorAdmin)
     * many table select
 
     * ORM base
-  
