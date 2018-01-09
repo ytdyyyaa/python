@@ -164,7 +164,7 @@ and this object have more native function :
   #remove a elemennt
   list_name.remove(element)
   #sort the elements
-  list_name.sort(lambda x,y : x > y ? : True : False)
+  list_name.sort(lambda x,y : x > y)
 ```
 * tuple
 The tuple like the list and the difference between their is that tuple is more like a set
@@ -216,6 +216,7 @@ My first personal blog is use this framework to contribute and is so easy for us
   the two objects </br>
   and the Session is contain from many WebSession that containe just request and response so we must have a value to control the status of the user
   MTV is a way to let our code to be separated and we can maintain these easilier
+  The view layer is on the base for the thing to control the view how to display and it seem as a base controller in the MVC pattern
 
 * What is the Router ?
   we use the Router for us to let the user find the correct way for some business
@@ -235,12 +236,12 @@ It is easy to solve this
           pip install Django
           ```
 And then choose the folder what is you favorite and then input this command that
-**django-admin startproject your_project_name**
+**django-admin startproject your_project_name**</br>
 and then change directory to the project folder
 and then use this shell Command **python manage.py runserver** then your django is install successful
 </br>
 Django use the App to divide the business logic so we have to create our own app to create our business logic
-use the command **python manage.py startapp app_name**
+use the command **python manage.py startapp app_name**</br>
 and in your project directory will have a app directory and you can create your own logic of your app
 
 * File Structure
@@ -297,7 +298,55 @@ urlpatterns = [
 ```
 you have mapped the base view on your url localhost:8000 /polls/ </br>
 
-*
+* Start use app and admin
+Will open your project_name/project_name settings.py
+and will set as below
+```python
+INSTALLED_APPS = (
+  'django.contrib.admin',
+  'django.contrib.auth',
+  'django.contrib.contenttypes',
+  'django.contrib.sessions',
+  'django.contrib.messages',
+  'django.contrib.staticfiles',
+  'books',
+)
+```
+and will register in admin to let the Django auto admin to admin this app
+so modify this file **app_name/admin.py**
+And write like this
+```python
+from django.contrib import admin
+from myproject.myapp.models import Author
+
+class AuthorAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(Author, AuthorAdmin)
+```
+
+## Django more
+
+* Model
+  Use the model to define an object in the project so we can use the ORM to operate them
+  Django model defined by inheriting the **djago.db.models.Model**
+  ```python
+  from django.db import models
+
+  class Person(models.Model):
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+  ```
+  We use the models static function to create the fields for the truth model and the scrop object
+  ```python
+  models.CharField for character fields
+  models.DataTimeField for datatimes
+  models.IntegerField for integer
+  models.TextField for a large text field
+  models.BooleanField for a true or false field
+  ```
+  From the source code of Django I find that Django use the Template pattern to define this model way
+  and then will use the same function to access the Database
+
 
 
 ## Question
@@ -323,10 +372,42 @@ you have mapped the base view on your url localhost:8000 /polls/ </br>
           ```
         * Find the second Max elemennt
           ```python
-            
+
           ```
         * Find the element that search in the search
 
-        *
 
 * Django problem
+  * Define a model simple
+    you have to define a model to describe the person with name age and School
+    ```python
+      from django.db import models
+
+      class Person(models.Model):
+        name = models.CharField(max_length=20,null=False)
+        age = models.IntegerField()
+        school = models.CharField(max_length=30)
+    ```
+  * Define some models to describe the student-course releatioship
+  ```python
+  from django.db import models
+  class Student(models.Model):
+    name = models.CharField(max_length=30,null=False)
+    age = models.IntegerField()
+    course = models.ManyToMany('Course')
+  class Course(models.Model)
+    name = models.CharField(max_length=30)
+    time = models.DateField()
+
+  ```
+  * Model query set
+    * find the all record
+
+    * conditional select
+
+    * link select
+
+    * many table select
+
+    * ORM base
+  
